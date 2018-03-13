@@ -13,7 +13,7 @@ baseurl: ""                             # for example, '/blog' if your blog host
 RSS: false
 weibo_username:     huxpro
 zhihu_username:     huxpro
-github_username:    huxpro
+github_username:    A-Failure
 twitter_username:   huxpro
 #facebook_username:  huxpro
 # linkedin_username:  firstname-lastname-idxxxx
@@ -83,7 +83,7 @@ friends: [
     #     title: "Su",
     #     href: "http://su.gallery/"
     # },{
-        title: "xMink",
+        title: "xMinh",
         href: "https://xminh.github.io/"
     },{
         title: "Asia",

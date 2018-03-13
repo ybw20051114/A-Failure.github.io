@@ -1,176 +1,144 @@
-# HANUMAN Jekyll Theme
+# Hydeout
 
-[![Build Status](https://travis-ci.org/samanyougarg/hanuman.svg?branch=master)](https://travis-ci.org/samanyougarg/hanuman)
+Hydeout updates the original [Hyde](https://github.com/poole/hyde)
+theme for [Jekyll](http://jekyllrb.com) 3.x and adds new functionality.
 
-Hanuman is a minimal yet powerful Jekyll theme for your blogs and websites.
+![Desktop](/_screenshots/1.png?raw=true)
+<img alt="Mobile home page" src="/_screenshots/2.png?raw=true" width="300px" />
+<img alt="Mobile post page" src="/_screenshots/3.png?raw=true" width="300px" />
 
-It is built using the open source [AMP Start framework](https://www.ampstart.com/) and can be customized as per your requirements.
+### Usage
 
-<a href="https://www.buymeacoffee.com/samanyougarg"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" target="_blank"></a>
+Hydeout is available as the `jekyll-theme-hydeout` Ruby Gem.
+Add `gem "jekyll-theme-hydeout", "~> 3.4"` to your Gemfile and run
+`bundle install`.
 
-## Live Demo
-## [Hanuman](https://samanyougarg.com/hanuman)
-![Hanuman](/Screenshots/hanuman.jpg "Hanuman Preview")
+Hydeout uses pagination, so if you have an `index.md`, you'll need to swap
+it with an `index.html` that uses the `index` layout:
 
-
-## Features
-
-- Minimal
-- Responsive
-- Syntax Highlighting for code
-- Cover Images for homepage and blog posts
-- Social Sharing
-- Simple Navigation Menu
-- Pagination
-- Google Analytics
-- Can be easily installed via "theme gem"
-- Github Pages support
-- Easily Customisable
-- Tags
-- Multiple Authors
-
-## What is AMP
-
-AMP stands for [Accelerated Mobile Pages](https://www.ampproject.org/), a Google-backed project designed as an open standard for any publisher to have pages load quickly on mobile devices.
-
-## Installation
-
-There are different ways to install the theme -
-
-### 1. Cloning the repository and updating settings
-1. Fork this repository and clone the forked repository.
-2. Update the _config.yml file as per your requirements.
-3. Add your posts to the _posts directory.
-4. Deploy to Github Pages or your own server.
-
-#### Deploying to Github Pages
-**Method 1**
-
-Push the contents of the destination folder (mentioned in _config.yml. eg - destination: ../hanuman-pages/) to the gh-pages branch(if project page) or master branch(if user page) of your repository.
-
-**Method 2**
-
-- Set up travis-ci for your fork.
-- Generate your secure token with the travis gem:
-  Run `gem install travis` on your terminal.
-- Grab the GH_TOKEN from https://github.com/settings/tokens
-- Then run `travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'`
-- Add the token to your .travis.yml file.
-Now you just need to push the files. Travis will generate the HTML files and automatically push them to your gh-pages branch.
-This is the setup I am using.
-
-### 2. Ruby Gem Method
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "hanuman"
+```
+---
+layout: index
+title: Home
+---
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
+### Keep It Simple
 
-```yaml
-theme: hanuman
+In keeping with the original Hyde theme, Hydeout aims to keep the overall
+design lightweight and plugin-free. JavaScript is currently limited only
+to Disqus and Google Analytics (and is only loaded if you provide configuration
+variables).
+
+Hydeout makes heavy use of Flexbox in its CSS. If Flexbox is not available,
+the CSS degrades into a single column layout.
+
+### Customization
+
+Hydeout replaces Hyde's class-based theming with the use
+of the following SASS variables:
+
+```scss
+$sidebar-bg-color: #202020 !default;
+$sidebar-sticky: true !default;
+$layout-reverse: false !default;
+$link-color: #268bd2 !default;
 ```
 
-And then execute:
+To override these variables, create your own `assets/css/main.scss` file.
+Define your own variables, then import in Hydeout's SCSS, like so:
 
-    $ bundle
+```scss
+---
+# Jekyll needs front matter for SCSS files
+---
 
-Or install it yourself as:
-
-    $ gem install hanuman
-
-You'll also need to copy or create the _config.yml file just like in this repository. Similarly, you'll need to have a navigation.yml and author.yml in your _data directory.
-
-#### Deploying to Github Pages
-Run `bundle exec jekyll serve` inside your cloned repository. Push the contents of the resulting _site to your Github Pages repository.
-
-
-### 3. Jekyll Remote Theme
-1. Create or update your Gemfile with the following -
-
-```ruby
-source "https://rubygems.org"
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll-remote-theme"
+$sidebar-bg-color: #ac4142;
+$link-color: #ac4142;
+$sidebar-sticky: false;
+@import "hydeout";
 ```
 
-2. Update the bundled gems using `bundle` command.
+See the [_variables](_sass/hydeout/_variables.scss) file for other variables
+you can override.
 
-3. Add `remote_theme: "hanuman"` to your `_config.yml`.
+You can see the full set of partials you can replace in the
+[`_includes`](_includes) folder, but there are a few worth noting:
 
-4. Add `jekyll-remote-theme` to the plugins array of your `_config.yml` -
+* `_includes/copyright.html` - Insert your own copyright here.
 
-```yaml
-plugins:
-  - jekyll-remote-theme
-```
+* `_includes/custom-head.html` - Insert custom head tags (e.g. to load your
+  own stylesheets)
 
-## Usage
+* `_includes/custom-foot.html` - Insert custom elements at the end of the
+  body (e.g. for custom JS)
 
-### _config.yml
-Update _config.yml with your respective settings like updating your site's name, description etc...
+* `_includes/custom-nav-links.html` - Additional nav links to insert at the
+  end of the list of links in the sidebar.
 
-### Styling
-AMP has a limitation that you can only use inline css.
-All the CSS for this theme is in the styles.scss file in the includes directory.
+  Pro-tip: The `nav`s in the sidebar are flexboxes. Use the `order` property
+  to order your links.
 
-#### Changing the Default Color
-In the styles.scss file in the includes directory, you can change the hex value of $theme-color to the color you would like your site to use.
+* `_includes/custom-icon-links.html`- Additional icon links to insert at the
+  end of the icon links at the bottom of the sidebar. You can use the `order`
+  property to re-order.
 
-### Author Information
-Author information is present in the author.yml file in the _data folder. You can update the fields of that file as per your requirements.
+* `_includes/favicons.html` - Replace references to `favicon.ico` and
+  `favicon.png` with your own favicons references.
 
-### Sidenav
-Sidenav can be updated from the navigation.yml file in the _data folder.
+* `_includes/font-includes.html` - The Abril Fatface font used for the site
+  title is loaded here. If you're overriding that font in the CSS, be sure
+  to also remove the font load reference here.
 
-## Writing Posts
-You can write posts just as you would in Jekyll, the only difference being that AMP has some strict guidelines on including external content.
+### New Features
 
-You cannot use Markdown format or normal HTML tags. AMP provides its own custom tags for images, videos etc...
+* Hydeout adds a new tags page (accessible in the sidebar). Just create a
+  new page with the tags layout:
 
-### Examples -
+  ```
+  ---
+  layout: tags
+  title: Tags
+  ---
+  ```
 
-**Images**
-`<amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>`
+* Hydeout adds a new "category" layout for dedicated category pages.
+  Category pages are automatically added to the sidebar. All other pages
+  must have `sidebar_link: true` in their front matter to show up in
+  the sidebar. To create a category page, use the `category` layout"
 
-**Videos**
-`<amp-youtube data-videoid="mGENRKrdoGY" layout="responsive" width="480" height="270"></amp-youtube>`
+  ```
+  ---
+  layout: category
+  title: My Category
+  ---
 
-[See Full AMP Documentation.](https://www.ampproject.org/docs/)
+  Description of "My Category"
+  ```
 
-### Using AMP Components
-Some AMP components require you to specify external scripts before using them.
-You can specify these scripts in the head.html file in the includes directory after the already imported scripts and then use these components in any post.
+* A simple redirect-to-Google search is available. Just create a page with
+  the `search` layout.
 
-## Validating your page with AMP
-AMP provides built-in validator to validate your pages so that they can rendered quickly.
+  ```
+  ---
+  layout: search
+  title: Google Search
+  ---
+  ```
 
-You can access this validator by opening the Developer Console in your browser and adding #development=1 to any url of your site.
+* Disqus integration is ready out of the box. Just add the following to
+  your config file:
 
-Example -
-http://localhost:4000/#development=1
+  ```yaml
+  disqus:
+    shortname: my-disqus-shortname
+  ```
 
-If you have errors on your page, AMP will list those for you in the console. If you do not have any errors, you'll get a message "AMP Validation Successful" on your console.
+  If you don't want Disqus or want to use something else, override
+  `comments.html`.
 
-## Enabling Google Analytics
-1. Set up your Analytics Tracking ID in _config.yml.
-2. Remove {% comment %} and {% endcomment %} tags in the default.html file in layouts directory.
+* For Google Analytics support, define a `google_analytics` variable with
+  your property ID in your config file.
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/samanyougarg/hanuman. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-To submit a pull request -
-
-1. Fork/clone the repository.
-2. Develop.
-3. Create a new branch from the master branch.
-4. Open a pull request on Github describing what was fixed or added.
-
-## Thanks
-Hanuman is based on [amplify](https://github.com/ageitgey/amplify) jekyll theme. Thank You.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+There's also a bunch of minor tweaks and adjustments throughout the
+theme. Hope this works for you!

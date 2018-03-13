@@ -1,57 +1,37 @@
-# Site settings
-title: Hanuman
-description: Hanuman is a minimal yet powerful Jekyll theme for your blogs and websites.
-cover: assets/images/radhakrishna.jpg
-logo: assets/images/logo.png
-favicon: assets/images/favicon.png
-baseurl: "/hanuman/" # the subpath of your site, e.g. /blog/ or / for root
-url: "https://samanyougarg.com" # the base hostname & protocol for your site
-paginate:	5 # The number of posts to show per page on your homepage
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
 
-# Social
-facebook: facebook
-twitter: twitter
-github:  github
+# Setup
+title:            Hydeout
+tagline:          'A Jekyll theme'
+description:      'The <a href="http://hyde.getpoole.com" target="_blank">Hyde</a> theme for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, refreshed.'
+url:              https://fongandrew.github.io/hydeout
+baseurl:          # the optional subpath of your site, e.g. "/blog"
+                  # NB: This applies to all pages in your Jekyll site.
+                  # If you want to move just the blog index pages but keep
+                  # other pages at root, see the paginate_path and
+                  # sidebar_blog_link below.
 
-#Additional Pages
-about: about
-contact: contact
-privacy-policy: privacy-policy
+author:
+  name:           'Andrew Fong'
+  url:            https://twitter.com/fongandrewc
 
-
-permalink: /:title
-
-
-# Google Analytics
-analytics_id: ""
-
-# Build settings
-markdown: kramdown
-
-kramdown:
-  parse_block_html: true
+paginate:         5
+# paginate_path:    '/page:num'
+                    # Or '/blog/page:num' if you want to move your index pages
 
 plugins:
+  - jekyll-feed
+  - jekyll-gist
   - jekyll-paginate
 
-
-# Settings for rake task
-safe: False
-lsi: False
-username: samanyougarg #github username
-repo: hanuman #github repository
-branch: master #branch
-relative_source: ../hanuman/ #source directory
-destination: ../hanuman-pages/ #destination directory
-production_url:  https://samanyougarg.com/
-source_url:  https://github.com/samanyougarg/hanuman #source repository url
-
-exclude:
-  - README.md
-  - Rakefile
-  - Gemfile
-  - Gemfile.lock
-  - changelog.md
-  - "*.Rmd"
-  - vendor
-  - .travis.yml
+# Custom vars
+version:            3.5.3
+sidebar_home_link:  true
+# sidebar_blog_link:  '/blog'   # By default, your home page is your blog
+                                # page. If you change your paginate_path,
+                                # set this to the root of the paginate_path
+                                # to enable a separate blog link.
+github:
+  repo:             https://github.com/fongandrew/hydeout

@@ -25,9 +25,13 @@ header-img: "img/3.jpg"
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <!-- 标签云 -->
 			<div id='tag_cloud' class="tags">
-				{% for tag in site.tags %}
+				<a href="#知乎" title="知乎" rel="7" style="background-color: rgb(94, 160, 200);">知乎</a>
+				<a href="#MIUI" title="MIUI" rel="1" style="background-color: rgb(187, 187, 238);">MIUI</a>
+				<a href="#Android" title="Android" rel="2" style="background-color: rgb(171, 183, 232);">Android</a>
+				<a href="#交互设计" title="交互设计" rel="4" style="background-color: rgb(140, 174, 219);">交互设计</a>
+				<!--{% for tag in site.tags %}
 				<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
-				{% endfor %}
+				{% endfor %}-->
 			</div>
 
             <!--<blockquote class="tag-comments">

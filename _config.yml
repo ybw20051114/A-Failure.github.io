@@ -71,7 +71,7 @@ sidebar-avatar: /img/1.jpg      # use absolute URL, seeing it's used in both `/`
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
-
+ 
 
 
 # Friends
@@ -96,9 +96,9 @@ friends: [
         href: "https://www.cansult.ga/"
     },{
         title: "Captain_Paul",
-        href: "http://blog.csdn.net/captain_paul"
+        href: "http://blog.csdn.net/captain_paul/"
     },{
         title: "AH",
-        href: "http://blog.csdn.net/qq_39766648"
+        href: "http://blog.csdn.net/qq_39766648/"
     }
 ]

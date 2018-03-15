@@ -4,7 +4,7 @@ SEOTitle: A-Failure的博客 | DieSheep
 header-img: img/home-bg.jpg
 email: 2297349251@qq.com
 description: "一个天天被吊打小蒟蒻的blog"
-url: "https://huangxuan.me"              # your host, for absolute URL
+url: "https://a-failure.github.io/"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
@@ -12,7 +12,6 @@ baseurl: ""                             # for example, '/blog' if your blog host
 # SNS settings
 RSS: false
 github_username:    A-Failure
-#facebook_username:  huxpro
 # linkedin_username:  firstname-lastname-idxxxx
 
 
@@ -63,7 +62,7 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "颓废是人类进步的阶梯"
+sidebar-about-description: "弱的一匹"
 sidebar-avatar: /img/1.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

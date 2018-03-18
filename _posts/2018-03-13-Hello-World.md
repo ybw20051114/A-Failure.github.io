@@ -3,7 +3,7 @@ layout:     post
 title:      "Hello World"
 date:       2018-03-13 21:14
 author:     "DieSheep"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/31.jpg"
 catalog: true
 tags:
     - 日常

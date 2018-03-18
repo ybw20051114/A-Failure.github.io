@@ -8,9 +8,7 @@ catalog: true
 tags:
     - 日常
 ---
-
 > "It's a beginning"
-
 
 在xm dalao和Cansult dalao的帮助下blog终于搞的比较像样了。。。
 

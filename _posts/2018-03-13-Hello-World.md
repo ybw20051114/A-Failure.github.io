@@ -12,6 +12,6 @@ tags:
 
 在xm dalao和Cansult dalao的帮助下blog终于搞的比较像样了。。。
 
-套用了Hux dalao的大模板~~然而不会改~~
+套用了某个叫Hux的dalao的大模板~~然而不会改~~
 
 就这样开始吧

@@ -97,7 +97,7 @@ s与新节点连一条容量为前后桌同时选文的边
 
 样例的图（图很丑别吐）：
 
- ![](https://cdn.luogu.org/upload/pic/13726.png) 
+ ![](img/study/happiness.png) 
 
 图中红点为第一个新建的点
 

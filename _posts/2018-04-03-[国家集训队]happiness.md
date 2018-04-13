@@ -109,7 +109,7 @@ s与新节点连一条容量为前后桌同时选文的边
 
 我好像拉低了这题的通过率~~好自豪~~
 
-```cpp
+```
 # include<iostream>
 # include<cstdio>
 # include<cstring>

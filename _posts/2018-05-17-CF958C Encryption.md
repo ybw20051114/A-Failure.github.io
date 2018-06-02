@@ -3,7 +3,7 @@ layout:     post
 title:      "CF958C Encryption"
 date:       2018-05-17
 author:     "DieSheep"
-header-img: "img/4152.jpg"
+header-img: "img/865.jpg"
 catalog: true
 tags:
     - 动态规划

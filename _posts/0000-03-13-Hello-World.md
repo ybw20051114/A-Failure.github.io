@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Hello World"
-date:       2018-03-13 21:14
+date:       0000-03-13 21:14
 author:     "DieSheep"
 header-img: "img/13.jpg"
 catalog: true

@@ -62,7 +62,7 @@ tags:
 
 当一头牛走时目标点++，并顺便下推懒标记
 
- ![](https://cdn.luogu.org/upload/pic/12340.png) 
+ ![](/img/study/slowdown.png) 
 
 如图所示（样例）
 

@@ -151,21 +151,6 @@ layout: default
         			</div>
                 </section>
                 {% endif %}
-
-                <!-- Friends Blog -->
-                {% if site.friends %}
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</article>
 <!-- Side Catalog Container -->
         {% if page.catalog %}
             <div class="
@@ -184,6 +169,21 @@ layout: default
                 </div>
             </div>
         {% endif %}
+                <!-- Friends Blog -->
+                {% if site.friends %}
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    {% for friend in site.friends %}
+                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</article>
+
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script type="text/javascript"> hljs.initHighlightingOnLoad(); </script>

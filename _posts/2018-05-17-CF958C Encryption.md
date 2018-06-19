@@ -8,6 +8,7 @@ catalog: true
 tags:
     - 动态规划
     - 树状数组
+    - 比赛
 ---
 >学校github终于能上了。。。
 

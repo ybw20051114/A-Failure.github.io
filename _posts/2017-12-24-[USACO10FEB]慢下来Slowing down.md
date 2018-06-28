@@ -21,6 +21,7 @@ tags:
 
 >Consider the following pasture network, where the number between
 parentheses indicates the pastures' owner.
+
 >        1 (3)
 
 >       / \

@@ -18,62 +18,21 @@ tags:
 
 >While cow i walks to P_i she might or might not pass through a pasture that already contains an eating cow. When a cow is present in a pasture, cow i walks slower than usual to prevent annoying her friend.
 
-
 >Consider the following pasture network, where the number between
 parentheses indicates the pastures' owner.
-```
-        1 (3)
-       / \
-  (1) 4   3 (5)
-     / \   
-(2) 2   5 (4)
-```
+
 >First, cow 1 walks to her pasture:
-```
-        1 (3)        
-       / \
-  [1] 4*  3 (5)
-     / \   
-(2) 2   5 (4)
-```
+
 >When cow 2 moves to her pasture, she first passes into the barn's
 pasture, pasture 1. Then she sneaks around cow 1 in pasture 4 before
 arriving at her own pasture.
-```
-        1 (3)
-       / \
-  [1] 4*  3 (5)
-     / \   
-[2] 2*  5 (4)
-```
+
 >Cow 3 doesn't get far at all -- she lounges in the barn's pasture, #1.
-```
-        1* [3]
-       / \
-  [1] 4*  3 (5)
-     / \   
-[2] 2*  5 (4)
-```
+
 >Cow 4 must slow for pasture 1 and 4 on her way to pasture 5:
-```
-        1* [3]
-        
-       / \
-       
-  [1] 4*  3 (5)
-  
-     / \   
-     
-[2] 2*  5* [4]
-```
+
 >Cow 5 slows for cow 3 in pasture 1 and then enters her own private pasture:
-```
-         1* [3]
-        / \
-  [1] 4*  3*[5]
-     / \   
-[2] 2*  5* [4]
-```
+
 >FJ would like to know how many times each cow has to slow down.
 
 >每天Farmer John的N头奶牛(1 <= N <= 100000，编号1…N)从粮仓走向他的自己的牧场。牧场构成了一棵树，粮仓在1号牧场。恰好有N-1条道路直接连接着牧场，使得牧场之间都恰好有一条路径相连。第i条路连接着A_i，B_i，(1 <= A_i <= N; 1 <= B_i <= N)。 奶牛们每人有一个私人牧场P_i (1 <= P_i <= N)。粮仓的门每次只能让一只奶牛离开。耐心的奶牛们会等到他们的前面的朋友们到达了自己的私人牧场后才离开。首先奶牛1离开，前往P_1；然后是奶牛2，以此类推。

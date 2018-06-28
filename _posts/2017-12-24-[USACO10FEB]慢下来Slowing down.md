@@ -57,14 +57,18 @@ arriving at her own pasture.
 >Cow 4 must slow for pasture 1 and 4 on her way to pasture 5:
 ```
         1* [3]
+        
        / \
+       
   [1] 4*  3 (5)
+  
      / \   
+     
 [2] 2*  5* [4]
 ```
 >Cow 5 slows for cow 3 in pasture 1 and then enters her own private pasture:
 ```
-        1* [3]
+         1* [3]
         / \
   [1] 4*  3*[5]
      / \   

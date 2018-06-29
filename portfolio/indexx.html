@@ -197,13 +197,15 @@ document.title="Orz Aufun! | DieSheep"
 			{
 				orz_cnt++;
 				alert("Aufun 太强辣!!! ×" + String(orz_cnt));
-				if (orz_cnt > 20)
+				if (orz_cnt == 20) {
 					alert("Aufun: 嘤嘤嘤你们这群辣鸡拿不到AU就来diss我 \nvan了，您被Refun的3000后宫打死了")
-				else if (orz_cnt > 15)
+					document.write("<body style=\"background: black\"></body>")
+				}
+				if (orz_cnt == 15)
 					alert("Aufun: Fuck♂you man？！ \n恭喜你激起了大佬的愤怒, 您的RP已更新为: -INF");
-				else if (orz_cnt > 7)
+				if (orz_cnt > 7 && orz_cnt < 15)
 					alert("Aufun: 整天膜人, 是没有前途的");
-				else if (orz_cnt > 3)
+				if (orz_cnt == 3)
 					alert("Aufun: 很好, 给我膜到INF");
 			}
 			function orzorzorz()

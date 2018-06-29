@@ -1,14 +1,12 @@
-<script>
-document.title="Orz Aufun! | DieSheep"
-</script>
 <html>
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110 src="//music.163.com/outchain/player?type=0&id=2275415823&auto=1&height=90"></iframe>
 	<head>
+		<meta name="viewport" content="width=width-device, initial-scale=1.0">
 		<style>
 			body {
 				text-align: center;
 				margin: 0;
-				min-width: 260px;
+				min-width: 320px;
 			}
 			#start {
 				width: 100%;
@@ -22,22 +20,28 @@ document.title="Orz Aufun! | DieSheep"
 			#start:hover {
 				background-color: rgb(172, 172, 172);
 			}
+			#hide {
+				flex-direction: column;
+				align-items: center;
+			}
+			#orz_title, #refun_icon, #too_strong, #orz_content, #refun {
+				display: flex;
+			}
 			#orz_title {
 				font-size: 0;
+				height: 180px;
+				transition: height 0.5s;
 			}
 			#orz_title span {
 				font-size: 128px;
-				transition: font-size 0.1s;
 				line-height: 180px;
+				transition: font-size 0.1s;
 			}
 			#orz_title span:hover {
 				font-size: 180px;
 			}
 			#refun_icon {
 				z-index: 100;
-				position: absolute;
-				margin: 10px -90px;
-				left: 50%;
 				background-image: url("https://s1.ax1x.com/2018/06/14/CXHEWD.png");
 				background-size: 100%;
 				width: 180px;
@@ -52,29 +56,18 @@ document.title="Orz Aufun! | DieSheep"
 				box-shadow: 0 0 200px 100px #f44;
 			}
 			#too_strong {
-				position: absolute;
 				transition-property: width, margin;
 				transition-duration: 0.5s;
-				margin: 0 -150px;
-				left: 50%;
-				margin-top: 170px;
-				width: 300px;
 				cursor: -webkit-zoom-in;
 			}
 			#too_1 {
 				z-index: 0;
 				transform: scaleX(-1);
 				float: left;
-				transition-property: width, height;
-				transition-duration: 0.5s;
 			}
 			#too_2 {
 				z-index: 0;
 				float: right;
-			}
-			#orz {
-				padding-bottom: 200px;
-				transition: padding-bottom 0.5s;
 			}
 			#orz_content {
 				color: red;
@@ -105,18 +98,28 @@ document.title="Orz Aufun! | DieSheep"
 				line-height: 30px;
 			}
 			#refun {
-				width: 600px;
 				opacity: 0;
-				height: 0;
-				transition-property: width, height, opacity;
-				transition-duration: 0.5s, 0.5s, 5s;
+				max-height: 0;
+				transition-property: width, max-height, opacity;
+				transition-duration: 2s;
+				transition-timing-function: ease-out;
 			}
 			.refun {
-				height: auto !important;
+				max-height: 100vh !important;
 				opacity: 1 !important;
 				cursor: pointer;
 			}
+			#refun_margin {
+				height: 100vh;
+				width: 100%;
+				display: none;
+				align-items: center;
+				flex-direction: column;
+			}
 			@media screen and (max-width: 700px) {
+				#orz_title {
+					height: 95px;
+				}
 				#orz_title span {
 					font-size: 80px;
 					line-height: 95px;
@@ -127,29 +130,15 @@ document.title="Orz Aufun! | DieSheep"
 				#refun_icon {
 					width: 140px;
 					height: 140px;
-					margin: 50px -70px;
-				}
-				#too_strong {
-					width: 260px;
-					margin: 0 -130px;
-					margin-top: 160px;
-				}
-				#too_1 {
-					width: 50px;
-					height: 55px;
-				}
-				#too_2 {
-					width: 50px;
-					height: 55px;
 				}
 				#orz_content {
 					font-size: 42px;
 				}
-				#refun {
-					width: 300px;
-				}
 			}
 			@media screen and (max-width: 400px) {
+				#orz_title {
+					height: 60px;
+				}
 				#orz_title span {
 					font-size: 50px;
 					line-height: 60px;
@@ -160,20 +149,6 @@ document.title="Orz Aufun! | DieSheep"
 				#refun_icon {
 					width: 100px;
 					height: 100px;
-					margin: 50px -50px;
-				}
-				#too_strong {
-					width: 170px;
-					margin: 0 -85px;
-					margin-top: 130px;
-				}
-				#too_1 {
-					width: 30px;
-					height: 35px;
-				}
-				#too_2 {
-					width: 30px;
-					height: 35px;
 				}
 				#orz {
 					padding-bottom: 150px;
@@ -181,33 +156,34 @@ document.title="Orz Aufun! | DieSheep"
 				#orz_content {
 					font-size: 32px;
 				}
-				#refun {
-					width: 200px;
-				}
 			}
 		</style>
 		<script>
+			document.title="Orz Aufun! | DieSheep"
 			var orz_cnt = 0;
 			function start()
 			{
 				document.getElementById("start").style.display = "none";
-				document.getElementById("hide").style.display = "block";
+				document.getElementById("hide").style.display = "flex";
 			}
 			function orz()
 			{
 				orz_cnt++;
 				alert("Aufun 太强辣!!! ×" + String(orz_cnt));
-				if (orz_cnt > 20)
+				if (orz_cnt == 20) {
 					alert("Aufun: 嘤嘤嘤你们这群辣鸡拿不到AU就来diss我 \nvan了，您被Refun的3000后宫打死了")
-				else if (orz_cnt > 15)
+					document.write("<body style=\"background: black\"></body>")
+				}
+				if (orz_cnt == 15)
 					alert("Aufun: Fuck♂you man？！ \n恭喜你激起了大佬的愤怒, 您的RP已更新为: -INF");
-				else if (orz_cnt > 7)
+				if (orz_cnt > 7 && orz_cnt < 15)
 					alert("Aufun: 整天膜人, 是没有前途的");
-				else if (orz_cnt > 3)
+				if (orz_cnt == 3)
 					alert("Aufun: 很好, 给我膜到INF");
 			}
 			function orzorzorz()
 			{
+				document.getElementById("refun_margin").style.display = "flex";
 				var el = document.getElementById("orz_btn");
 				el.className = "orz_succ";
 				el.innerHTML = "膜拜成功!<br>Aufun又变强了!";
@@ -228,16 +204,16 @@ document.title="Orz Aufun! | DieSheep"
 				<span style="color: rgb(234,67,53)">fun</span>
 			</p>
 			<!--180px * 180px-->
-			<div id="orz">
-				<div id="refun_icon" onclick="alert('点一下膜一生\norz orz orz\n')"></div>
-				<div id="too_strong" onclick="orz()">
-					<img id="too_1" src="/img/Orz.gif">
-					<img id="too_2" src="/img/Orz.gif">
-				</div>
+			<div id="refun_icon" onclick="alert('点一下膜一生\norz orz orz\n')"></div>
+			<div id="too_strong" onclick="orz()">
+				<img id="too_1" src="/img/Orz.gif">
+				<img id="too_2" src="/img/Orz.gif">
 			</div>
 			<p id="orz_content">Aufun是我们的红太阳，没有他我们会死！</p>
 			<div id="orz_btn" onclick="javascript:orzorzorz()">点击膜拜</div>
-			<img id="refun" src="https://s1.ax1x.com/2018/06/03/Co5gmj.jpg" onclick="alert('Refun: 我太强了')">
+			<div id="refun_margin">
+				<img id="refun" src="https://s1.ax1x.com/2018/06/03/Co5gmj.jpg" onclick="alert('Refun: 我太强了')">
+			</div>
 		</div>
         <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
         </script>
@@ -245,6 +221,6 @@ document.title="Orz Aufun! | DieSheep"
           你是第<span id="busuanzi_value_page_pv"></span>个朝圣者！快膜Aufun来获得Au爷无穷RP的力量吧！
         </span>
         <br>
-        Powered by Wzh and Cansult
+        Powered by Wzhqwq and Cansult
 	</body>
 </html>

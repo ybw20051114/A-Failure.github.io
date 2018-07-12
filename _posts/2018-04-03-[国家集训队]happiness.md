@@ -1,9 +1,9 @@
----
+﻿---
 layout:     post
 title:      "[国家集训队]happiness"
 date:       2018-04-03
 author:     "DieSheep"
-header-img: "img/42.jpg"
+header-img: "img/used/42.jpg"
 catalog: true
 tags:
     - 网络流

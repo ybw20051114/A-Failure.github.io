@@ -1,9 +1,9 @@
----
+﻿---
 layout:     post
 title:      "[USACO10FEB]慢下来Slowing down"
 date:       2017-12-24
 author:     "DieSheep"
-header-img: "img/780.jpg"
+header-img: "img/used/780.jpg"
 catalog: true
 tags:
     - 线段树

@@ -1,9 +1,9 @@
----
+﻿---
 layout:     post
 title:      "[USACO09MAR]地震损失2Earthquake Damage 2"
 date:       2017-12-21
 author:     "DieSheep"
-header-img: "img/64361.jpg"
+header-img: "img/used/64361.jpg"
 catalog: true
 tags:
     - 网络流

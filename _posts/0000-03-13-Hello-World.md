@@ -3,7 +3,7 @@ layout:     post
 title:      "Hello World"
 date:       0000-03-13 21:14
 author:     "DieSheep"
-header-img: "img/13.jpg"
+header-img: "img/used/13.jpg"
 catalog: true
 tags:
     - 日常

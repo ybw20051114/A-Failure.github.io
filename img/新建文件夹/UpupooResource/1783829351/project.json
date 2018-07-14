@@ -1,0 +1,22 @@
+{
+	"description" : "某本子封面，老司机都懂的  鼠标动画的代码直接在其他地方复制的\n更新 缩小了小粒子效果",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"title" : "某loli本子封面",
+	"type" : "web",
+	"visibility" : "public",
+	"workshopid" : 824625624
+}

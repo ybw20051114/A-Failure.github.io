@@ -2,7 +2,7 @@
 layout:     post
 title:      "CF958C Encryption"
 date:       2018-05-17
-author:     "DieSheep"
+author:     "Dispwnl"
 header-img: "img/used/395.jpg"
 catalog: true
 tags:

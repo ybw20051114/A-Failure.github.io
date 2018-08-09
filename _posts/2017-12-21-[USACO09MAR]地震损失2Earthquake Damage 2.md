@@ -2,7 +2,7 @@
 layout:     post
 title:      "[USACO09MAR]地震损失2Earthquake Damage 2"
 date:       2017-12-21
-author:     "DieSheep"
+author:     "Dispwnl"
 header-img: "img/used/64361.jpg"
 catalog: true
 tags:

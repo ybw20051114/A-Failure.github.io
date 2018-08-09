@@ -1,8 +1,8 @@
----
+﻿---
 layout:     post
 title:      "Hello World"
 date:       0000-03-13 21:14
-author:     "DieSheep"
+author:     "Dispwnl"
 header-img: "img/used/13.jpg"
 catalog: true
 tags:

@@ -2,7 +2,7 @@
 layout:     post
 title:      "[USACO10FEB]慢下来Slowing down"
 date:       2017-12-24
-author:     "DieSheep"
+author:     "Dispwnl"
 header-img: "img/used/780.jpg"
 catalog: true
 tags:

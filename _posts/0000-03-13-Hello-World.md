@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "Hello World"
 date:       0000-03-13 21:14

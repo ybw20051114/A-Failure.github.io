@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      "[USACO09MAR]地震损失2Earthquake Damage 2"
 date:       2017-12-21
